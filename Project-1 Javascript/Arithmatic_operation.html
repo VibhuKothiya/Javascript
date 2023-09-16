@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmatic Operators</title>
+</head>
+
+<body>
+    <table width='30%' , height='200' , align='center' , border='1' , cellspacing='0'>
+        <tr bgcolor='darkgrey'>
+            <th> First Number is: </th>
+            <th id="First"> </th>
+        </tr>
+        <tr bgcolor='darkgrey'>
+            <th> Second Number is: </th>
+            <th id="second"> </th>
+        </tr>
+        <tr bgcolor='grey'>
+            <td>Sum (+): </td>
+            <td id="sum"> </td>
+        </tr>
+        <tr bgcolor='grey'>
+            <td>Substraction (-): </td>
+            <td id="substract"> </td>
+        </tr>
+        <tr bgcolor='grey'>
+            <td>Multiplication (*): </td>
+            <td id="multiplication"> </td>
+        </tr>
+        <tr bgcolor='grey'>
+            <td>Division (/): </td>
+            <td id="division"> </td>
+        </tr>
+        <tr bgcolor='grey'>
+            <td>Modulus (%): </td>
+            <td id="modulus"> </td>
+        </tr>
+    </table>
+
+</body>
+<script>
+    let num1 = parseInt(prompt("Enter First Number: "));
+    document.getElementById('First').innerHTML = num1;
+
+
+    let num2 = parseInt(prompt("Enter Second Number: "));
+    document.getElementById('second').innerHTML = num2;
+
+    let sum = (num1 + num2);
+    document.getElementById('sum').innerHTML = sum;
+
+    let sub = (num1 - num2);
+    document.getElementById('substract').innerHTML = sub;
+
+    let mul = (num1 * num2);
+    document.getElementById('multiplication').innerHTML = mul;
+
+    let div = (num1 / num2);
+    document.getElementById('division').innerHTML = div;
+
+    let modulas = (num1 % num2);
+    document.getElementById('modulus').innerHTML = modulas;
+
+
+
+</script>
+
+</html>

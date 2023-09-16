@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill </title>
+
+    <style>
+        .table_code {
+            width: auto;
+            height: 100vh;
+            table-layout: fixed;
+
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <table class="table_code" , align="center" , border="1" , cellspacing="0">
+        <thead>
+            <tr>
+                <th style="color: grey"> <img src="Torrent_Power_logo.svg.png" width="100" , height="50"> <br><br>
+                    TORRENT POWER LIMITED </th>
+                <td> Zone / Nanpura <br> T.No. 3000132361 <br> Bill Date / 06-06-23 <br> Billing Mode / 60 days</td>
+                <td colspan="2" style="font-size: 11px; text-align: center;">PORTAL : CONECT.TORRENTPOWER.COM <br><br>
+                    MOBILE APP ON ANDROID & iOS</td>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td> Customer Name </td>
+                <td id="CustomerName"> </td>
+                <td>Service No. </td>
+                <td id="ServiceNo"> </td>
+            </tr>
+            <tr>
+                <td> Customer Address </td>
+                <td id="CustomerAddress"> </td>
+                <td> Billing Month </td>
+                <td id="BillingMonth"> </td>
+            </tr>
+            <tr>
+                <td> Units Consumed </td>
+                <td id="UnitConsumed"> </td>
+                <td> Due Date </td>
+                <td id="DueDate"> </td>
+            </tr>
+        </tbody>
+        <tfoot align="center">
+            <tr>
+                <td> Amount Due</td>
+                <td id="Amount" style="background-color: darkgoldenrod; font-weight: bold;"> </td>
+                <td colspan="2"> <img src="energy saving img.jpg" style="width: auto;"> </td>
+
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+
+<script>
+    let Name = prompt("Enter Customer Name: ");
+    let Service = prompt("Enter Customer Service Number: ");
+    let Address = prompt("Enter Customer Address: ");
+    let Year = prompt("Enter Billing month-year: ");
+    let Unit = prompt("Enter Units Consumed: ");
+    let Due = prompt("Enter Due Date of Bill Pay: ");
+    let Amount = ("Rs." + Unit * 8)
+
+    document.getElementById('CustomerName').innerHTML = Name;
+    document.getElementById('ServiceNo').innerHTML = Service;
+    document.getElementById('CustomerAddress').innerHTML = Address;
+    document.getElementById('BillingMonth').innerHTML = Year;
+    document.getElementById('UnitConsumed').innerHTML = Unit;
+    document.getElementById('DueDate').innerHTML = Due;
+    document.getElementById('Amount').innerHTML = Amount;
+
+</script>
+
+</html>

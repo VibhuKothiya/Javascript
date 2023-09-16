@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subjects marks</title>
+</head>
+
+<body>
+    <table border="1" , width="400" , align="center" , bgcolor="teal">
+        <tr>
+            <th> Subjects </th>
+            <th> Max Marks </th>
+            <th> Marks Obtained </th>
+        </tr>
+        <tr>
+            <th> Maths </th>
+            <td align="center"> 100 </td>
+            <td align="center" , id="MathMark"></td>
+        </tr>
+        <tr>
+            <th> Science </th>
+            <td align="center"> 100 </td>
+            <td align="center" , id="ScienceMark"></td>
+        </tr>
+        <tr>
+            <th> English </th>
+            <td align="center"> 100 </td>
+            <td align="center" , id="EnglishMark"></td>
+        </tr>
+        <tr>
+            <th> Gujarati </th>
+            <td align="center"> 100 </td>
+            <td align="center" , id="GujaratiMark"></td>
+        </tr>
+        <tr>
+            <th> Physics </th>
+            <td align="center"> 100 </td>
+            <td align="center" , id="PhysicsMark"></td>
+        </tr>
+        <tr>
+            <th> Total Marks </th>
+            <td align="center"><b> 500 </td></b>
+            <td align="center" , id="TotalMarks" style="font-weight: bold;"></td>
+        </tr>
+        <tr>
+            <th> Result </th>
+            <th colspan="2" , id="Precentage"> </th>
+
+
+        </tr>
+
+    </table>
+</body>
+<script>
+    let Maths = parseInt(prompt("Enter Maths Marks: "));
+    let Science = parseInt(prompt("Enter Science Marks: "));
+    let English = parseInt(prompt("Enter English Marks: "));
+    let Gujarati = parseInt(prompt("Enter Gujarati Marks: "));
+    let Physics = parseInt(prompt("Enter Physics Marks: "));
+    let Total = (Maths + Science + English + Gujarati + Physics);
+    let percentage = (Total / 500 * 100 + "%");
+
+
+    document.getElementById('MathMark').innerHTML = Maths;
+    document.getElementById('ScienceMark').innerHTML = Science;
+    document.getElementById('EnglishMark').innerHTML = English;
+    document.getElementById('GujaratiMark').innerHTML = Gujarati;
+    document.getElementById('PhysicsMark').innerHTML = Physics;
+    document.getElementById('TotalMarks').innerHTML = Total;
+    document.getElementById('Precentage').innerHTML = percentage;
+</script>
+
+</html>

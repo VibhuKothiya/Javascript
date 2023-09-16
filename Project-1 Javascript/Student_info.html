@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Details</title>
+</head>
+
+<body>
+    <h2 style="text-align: center; color: darkslategray; font-family: Verdana;">My Details</h2>
+    <div class="button"
+        style="display: flex; justify-content: center; align-items: center; height: auto; margin-bottom: 20px;">
+        <button onclick="displayTable()" style="background-color: teal; padding: 5px; border-radius: 5px;">Show My
+            Details >></button>
+    </div>
+    <div id="table-container"></div>
+
+</body>
+
+
+<script type="text/javascript">
+    function displayTable() {
+        const container = document.getElementById("table-container");
+
+        const table = `
+    <table border='3',  width='400', height='200', align='center', cellspacing='3'>
+        <tr bgcolor='teal'>
+            <th colspan='2'>My Details</th>
+        </tr>
+        <tr bgcolor='#3D8794'>
+            <td>Name:</td>
+            <td>Vibhuti Kothiya</td>
+        </tr>
+        <tr bgcolor='#3D8794'>
+            <td>Fathe Name:</td>
+            <td>Gordhanbhai Kothiya</td>
+        </tr>
+        <tr bgcolor='#3D8794'>
+            <td>GIRD:</td>
+            <td>3350</td>
+        </tr>
+        <tr bgcolor='#3D8794'>
+            <td>Course:</td>
+            <td>Full Stack Development</td>
+        </tr>
+        <tr bgcolor='#3D8794'>
+            <td>Email:</td>
+            <td>vibhuti.kothiya@gmail.com</td>
+        </tr>
+        
+    </table>    
+    `;
+        container.innerHTML = table;
+
+    }
+
+
+</script>
+
+
+</html>

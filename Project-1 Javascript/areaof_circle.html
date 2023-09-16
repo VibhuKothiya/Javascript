@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Circle</title>
+</head>
+
+<body>
+    <table border="1" , width="50%" , height="100" , align="center" , cellspacing="0">
+        <tr bgcolor="darkgrey">
+            <th>Radius is: </th>
+            <th id="radius"> </th>
+        </tr>
+        <tr bgcolor="darkgrey">
+            <th>Area of Circle is (πr²): </th>
+            <th id="AreaCircle"> </th>
+        </tr>
+        <tr bgcolor="darkgrey">
+            <th>Circumference of Circle (2πr): </th>
+            <th id="CircumferenceCircle"> </th>
+        </tr>
+
+    </table>
+</body>
+
+<script>
+    let radius = parseFloat(prompt("Enter the Radius of Circle: "));
+    let areaofCircle = (3.14 * radius * radius);
+    let Circumference = (2 * 3.14 * radius);
+
+    document.getElementById('radius').innerHTML = radius;
+    document.getElementById('AreaCircle').innerHTML = areaofCircle;
+    document.getElementById('CircumferenceCircle').innerHTML = Circumference;
+
+</script>
+
+</html>
