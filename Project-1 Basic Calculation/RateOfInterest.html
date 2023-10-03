@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate of Interest</title>
+</head>
+<!-- 7. Write a javascript Program to find  rate of interest.(compulsory user input)(p * r  * n / 100) -->
+
+<body>
+    <table border="1" , width="50%" , height="100" , align="center" , cellspacing="0">
+        <tr bgcolor="darkgrey">
+            <td>Amount is: </td>
+            <td id="Amount"> </td>
+        </tr>
+
+        <tr bgcolor="darkgrey">
+            <td>Rate of Interest is: </td>
+            <td id="Interest"></td>
+        </tr>
+
+        <tr bgcolor="darkgrey">
+            <td>Time Duration is: </td>
+            <td id="Duration"> </td>
+        </tr>
+
+        <tr bgcolor="darkgrey">
+            <th>Rate of Interest is (p*r*n/100): </th>
+            <th id="RateofInterest"> </th>
+        </tr>
+        <tr bgcolor="darkgrey">
+            <th>Total Amount:  </th>
+            <th id="TotalAmount"> </th>
+        </tr>
+
+    </table>
+    
+</body>
+
+<script>
+    let P = parseFloat(prompt("Enter the Amount: "));
+    let R = parseFloat(prompt("Enter the Rate of Interest: "));
+    let N = parseFloat(prompt("Enter the Time Duration: "));
+
+    let RateofInterest = (P * R * N)/100;
+    let TotalAmount = RateofInterest + P;    
+
+    document.getElementById('Amount').innerHTML = P;
+    document.getElementById('Interest').innerHTML = R +"%";
+    document.getElementById('Duration').innerHTML = N;
+    document.getElementById('RateofInterest').innerHTML = RateofInterest;
+    document.getElementById('TotalAmount').innerHTML = TotalAmount;
+
+</script>
+</html>

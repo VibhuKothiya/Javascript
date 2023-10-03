@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Area</title>
+</head>
+<!-- 6. Write a javascript Program to find triangle area.(compulsory user input)(formula  0.5 * b * h) -->
+
+<body>
+    <table border="1" , width="50%" , height="100" , align="center" , cellspacing="0">
+        <tr bgcolor="darkgrey">
+            <th>Base is: </th>
+            <th id="Base"> </th>
+        </tr>
+
+        <tr bgcolor="darkgrey">
+            <th>Height is: </th>
+            <th id="Height"> </th>
+        </tr>
+        <tr bgcolor="darkgrey">
+            <th>Area of Triangle is (0.5*b*h): </th>
+            <th id="areaofTriangle"> </th>
+        </tr>        
+
+    </table>
+</body>
+
+<script>
+    let b = parseFloat(prompt("Enter the Base of Triangle: "));
+    let h = parseFloat(prompt("Enter the Height of Triangle: "));
+
+    let areaofTriangle = (0.5 * b * h);
+    
+
+    document.getElementById('Base').innerHTML = b;
+    document.getElementById('Height').innerHTML = h;
+    document.getElementById('areaofTriangle').innerHTML = areaofTriangle;
+
+</script>
+</html>
