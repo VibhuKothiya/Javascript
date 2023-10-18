@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grade System</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+        /* 6.Write a Javascript program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer. Calculate percentage and 
+        grade according to following
+            Percentage >= 90 % : Grade A
+            Percentage >= 80 % : Grade B
+            Percentage >= 70 % : Grade C
+            Percentage >= 60 % : Grade D
+            Percentage >= 50 % : Grade E
+            Percentage >= 40 % : Grade F */
+
+        const subjects = ["Physics", "Chemistry", "Biology", "Mathematics", "Computer"];
+        let sum = 0;
+
+        // Input marks for each subject
+        for (let i = 0; i < subjects.length; i++) {
+
+                let mark = parseInt(prompt(`Enter marks of ${subjects[i]}: `));
+
+                if (isNaN(mark) || mark < 0 || mark > 100) {
+                        console.log("Invalid Input");
+                        break;
+                }
+                sum += mark;
+        }
+
+        //Calculate percentage
+        const result = (sum / 500) * 100;
+        let percentage = result.toFixed(2);
+
+        //Display percentage with Grade
+        if (percentage >= 90) {
+                console.log(`Result is ${percentage}% with Grade A`);
+        }
+        else if (percentage >= 80) {
+                console.log(`Result is ${percentage}% with Grade B`);
+        }
+        else if (percentage >= 70) {
+                console.log(`Result is ${percentage}% with Grade C`);
+        }
+        else if (percentage >= 60) {
+                console.log(`Result is ${percentage}% with Grade D`);
+        }
+        else if (percentage >= 50) {
+                console.log(`Result is ${percentage}% with Grade E`);
+        }
+        else if (percentage >= 40) {
+                console.log(`Result is ${percentage}%  with Grade F`);
+        }
+        else {
+                console.log(`Failed`);
+        }
+
+</script>
+
+</html>

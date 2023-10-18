@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Calculator</title>
+  </head>
+  <body></body>
+
+  <script>
+    /*10. Write a JavaScript program to create basic calculator using switch case.
+    Ex. User input a,b and select choice + , - , * , /
+    a=10
+    b=5
+    select choice + , - , * , /
+    +
+    Ans = 15
+    -
+    Ans = 5;
+    *
+    Ans = 50
+    /
+    Ans = 2 */
+
+    let choice = prompt("Enter any choice form '+', '-', '*', '/' ");
+
+    // if (choice !== "+") {
+    //   document.write(`Input not Valid`);
+
+    // }
+
+    let a = parseFloat(prompt("Enter first number: "));
+    let b = parseFloat(prompt("Enter second number: "));
+
+    switch (choice) {
+      case "+":
+        document.write(`Sum is : ${a + b}`);
+        break;
+      case "-":
+        document.write(`Substraction is : ${a - b}`);
+        break;
+      case "*":
+        document.write(`Multiplication is : ${a * b}`);
+        break;
+      case "/":
+        document.write(`Division is : ${a / b}`);
+        break;
+      default:
+        document.write(`Invalid Input!`);
+        break;
+    }
+  </script>
+</html>

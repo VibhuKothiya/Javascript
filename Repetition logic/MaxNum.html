@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Max Number</title>
+  </head>
+  <body></body>
+
+  <script>
+    //9. Write a JavaScript program to find max of 4 number using nested if.
+
+    let a = parseInt(prompt("Enter first number: "));
+    let b = parseInt(prompt("Enter second number: "));
+    let c = parseInt(prompt("Enter third number: "));
+    let d = parseInt(prompt("Enter fourth number: "));
+
+    if (a > b) {
+      if (a > c) {
+        if (a > d) {
+          console.log(`Max Number is ${a}`);
+        } else {
+          console.log(`Max Number is ${d}`);
+        }
+      } else {
+        if (c > d) {
+          console.log(`Max Number is ${c}`);
+        } else {
+          console.log(`Max Number is ${d}`);
+        }
+      }
+    } else {
+      if (b > c) {
+        if (b > d) {
+          console.log(`Max Number is ${b}`);
+        } else {
+          console.log(`Max Number is ${d}`);
+        }
+      }
+      else{
+        if(c > d){
+            console.log(`Max Number is ${c}`);
+        }
+        else{
+            console.log(`Max Number is ${d}`);
+        }
+      }
+    }
+  </script>
+</html>

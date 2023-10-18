@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Name</title>
+</head>
+<body>
+    
+</body>
+<script>
+/* 8. Write a JavaScript program to find week day from first letter of it using if else if.
+Ex. User Input: M, Output: Monday */
+
+let week = prompt("Enter any character from M, T, W, Th, F, S, Su: ");
+let weekName;
+
+if(week == 'M'){
+    weekName = 'Monday';
+}
+else if(week == 'T'){
+    weekName = 'Tuesday';
+}
+else if(week == 'W'){
+    weekName = 'Wednesday';
+}
+else if(week == 'Th'){
+    weekName = 'Thursday';
+}
+else if(week == 'F'){
+    weekName = 'Friday';
+}
+else if(week == 'S'){
+    weekName = 'Saturday';
+}
+else if(week == 'Su'){
+    weekName = 'Sunday';
+}
+else{
+    weekName = 'Invalid Input!';
+}
+console.log(`Weekday: ${weekName}`)
+
+
+</script>
+</html>

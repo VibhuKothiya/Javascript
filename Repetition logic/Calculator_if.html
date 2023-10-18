@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Calculator(if)</title>
+  </head>
+  <body></body>
+
+  <script>
+    //11. Write a JavaScript program to create basic calculator using ledder if else.
+
+    let choice = prompt("Enter any choice form '+', '-', '*', '/' ");
+
+    let a = parseFloat(prompt("Enter first number: "));
+    let b = parseFloat(prompt("Enter second number: "));
+
+    if (choice === "+") {
+      document.write(`Sum is: ${a + b}`);
+    } else if (choice === "-") {
+      document.write(`Substraction is: ${a - b}`);
+    } else if (choice === "*") {
+      document.write(`Multiplication is: ${a * b}`);
+    } else if (choice === "/") {
+      document.write(`Division is: ${a / b}`);
+    } else {
+      document.write(`Invalid Input!`);
+    }
+  </script>
+</html>

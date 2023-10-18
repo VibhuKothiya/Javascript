@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greter Number</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // 4.Write a JavaScript program to find which number is greter in 4 numbers using ledder if else.
+    
+    let a = parseFloat(prompt("Enter first number: "));
+    let b = parseFloat(prompt("Enter second number: "));
+    let c = parseFloat(prompt("Enter third number: "));
+    let d = parseFloat(prompt("Enter forth number: "));
+
+   if(a > b && a > c && a > d){
+        console.log(`${a} is greter number`);
+   }
+   else if(b > c && b > d && b > a){
+        console.log(`${b} is greter number`);
+   }
+   else if (c > d && c > b && c > a) {
+       console.log(`${c} is greter number`);
+   }
+   else{
+        console.log(`${d} is greter number`);
+   }
+</script>
+</html>
