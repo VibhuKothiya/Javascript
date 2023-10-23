@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Number Sum</title>
+  </head>
+  <body></body>
+  <script>
+    // 6.Write javascript program to print 1 to n number  and all number sum using do while loop
+
+    let n = parseInt(prompt("Enter Number to Print: "));
+    let i = 1,
+      sum = 0;
+
+    do {
+      document.write(i + "<br>");
+      sum += i;
+      i++;
+    } while (i <= n);
+    document.write("sum of all number is: " + sum);
+  </script>
+</html>

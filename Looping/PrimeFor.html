@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime number using for loop</title>
+  </head>
+  <body></body>
+  <script>
+    // 11.Write javascript program Check weather num is prime or not using for loop
+
+    let n = parseInt(prompt("Enter any number: "));
+    count = 0;
+
+    for (let i = 1; i <= n; i++) {
+      if (n % i == 0) {
+        count++;
+      }
+    }
+    if (count == 2) {
+      document.write(`${n} is prime number`);
+    } else {
+      document.write(`${n} is not a prime number`);
+    }
+  </script>
+</html>

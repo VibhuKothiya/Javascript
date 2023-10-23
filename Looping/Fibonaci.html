@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci series</title>
+  </head>
+  <body></body>
+  <script>
+    // 13.Write javascript program print out Fibonacci series. (0,1,1,2,3,5,8…)
+
+    let n = parseInt(prompt("Enter any number: "));
+    let num1 = 0;
+    num2 = 1;
+    document.write(`${num1}, ${num2},`);
+
+    for (let i = 3; i <= n; i++) {
+      num3 = num1 + num2;
+      document.write(`${num3},`);
+
+      num1 = num2;
+      num2 = num3;
+    }
+  </script>
+</html>
