@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ledder if else using no return with parameter function</title>
+  </head>
+  <body>
+    <!-- 4.Write a JavaScript program to find which number is greter in 4 numbers using ledder if else. (using no return with parameter function) -->
+
+    <p id="num1"></p>
+    <p id="num2"></p>
+    <p id="num3"></p>
+    <p id="num4"></p>
+
+    <p id="result"></p>
+  </body>
+
+  <script>
+    function numCheck(a, b, c, d) {
+      let max = a;
+
+      if (b > max) {
+        max = b;
+      }
+      if (c > max) {
+        max = c;
+      }
+      if (d > max) {
+        max = d;
+      }
+      document.getElementById("result").innerHTML = max + " num is maximum";
+    }
+
+    var a = parseInt(prompt("Enter first number: "));
+    var b = parseInt(prompt("Enter second number: "));
+    var c = parseInt(prompt("Enter third number: "));
+    var d = parseInt(prompt("Enter fourth number: "));
+
+    numCheck(a, b, c, d);
+  </script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arithmatic operation using simple function</title>
+  </head>
+  <body>
+    <!-- 5.Write a JavaScript program to add two number of addition, subtraction, multiplication, division (using simple function) -->
+    <p id="sum"></p>
+    <p id="sub"></p>
+    <p id="mul"></p>
+    <p id="div"></p>
+  </body>
+  <script>
+    let a = parseFloat(prompt("Enter first value: "));
+    let b = parseFloat(prompt("Enter second value: "));
+
+    function sum() {
+      return "sum is: " + (a + b);
+    }
+    function sub() {
+      return "substraction is: " + (a - b);
+    }
+    function mul() {
+      return "multiplication is: " + a * b;
+    }
+    function div() {
+      let d = a / b;
+      if (!Number.isInteger(d)) {
+        d = d.toFixed(4);
+      }
+      return "division is: " + d;
+    }
+
+    document.getElementById("sum").innerHTML = sum();
+    document.getElementById("sub").innerHTML = sub();
+    document.getElementById("mul").innerHTML = mul();
+    document.getElementById("div").innerHTML = div();
+  </script>
+</html>

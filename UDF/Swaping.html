@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Two Variables</title>
+</head>
+<body>
+    <!-- 6.Write a javascript Program to perform a swapping of two variables.(all function use) -->
+    <h5 id="head1"></h5>
+    <p id="num1"></p>
+    <p id="num2"></p>
+    <h5 id="head2"></h5>
+    <p id="swap1"></p>
+    <p id="swap2"></p>
+</body>
+<script>
+    let a = parseInt(prompt("Enter first number: "));
+    let b = parseInt(prompt("Enter second number: "));
+
+    swap = () => {
+        document.getElementById('head1').innerHTML = "Befor Swapping";
+        document.getElementById('num1').innerHTML = "A: "+a;
+        document.getElementById('num2').innerHTML = "B: "+b;
+
+        document.getElementById('head2').innerHTML = "After Swapping";
+        
+        document.getElementById('swap1').innerHTML = "A: "+(a * b) / a;
+        document.getElementById('swap2').innerHTML = "B: "+(a * b) / b;
+    }
+
+    swap ();
+</script>
+
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number is positive or negetive?</title>
+  </head>
+  <body>
+    <!-- 1.Write a JavaScript program to check number positive and negetive? (using simple function) -->
+
+    <h2>Check number positive and negetive?</h2>
+
+    <p>Input any number and click check button</p>
+
+    <input type="number" id="num" />
+
+    <button type="submit" onclick="showResult()">Check</button>
+
+    <p id="result"></p>
+  </body>
+
+  <script>
+    function checkNum() {
+      var num = document.getElementById("num").value;
+      
+      if (num > 0) {
+        return num + " is positive number";
+      } else if (num < 0) {
+        return num + " is negative number";
+      } else {
+        return " The number is zero";
+      }
+    }
+
+    function showResult() {
+      var result = checkNum();
+
+      document.getElementById("result").innerHTML = result;
+    }
+  </script>
+</html>
