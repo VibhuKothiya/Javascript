@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade & Percentage</title>
+</head>
+<body>
+    
+</body>
+
+<script> 
+/* 1. wap to javascript class and object method use program to input marks of five subjects 
+Physics, Chemistry, Biology, Mathematics and Computer. Calculate percentage and grade according to following
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D 
+Percentage >= 50% : Grade E
+Percentage >= 40% : Grade F */
+
+class students{
+    constructor(){
+        this.physics = parseInt(prompt("Enter marks of physics: "));
+        this.chemistry = parseInt(prompt("Enter marks of Chemistry: "));
+        this.biology = parseInt(prompt("Enter marks of Biology: "));
+        this.mathamatics = parseInt(prompt("Enter marks of mathematics: "));
+        this.computer = parseInt(prompt("Enter marks of computer: ")); 
+    }
+    calculatePercentage(){
+        let totalMarks = this.physics + this.chemistry + this.biology + this.mathamatics + this.computer;
+        let percentage = (totalMarks/500)*100;
+
+        return percentage.toFixed(2);
+    }
+    calculateGrade(){
+        let percentage = this.calculatePercentage();
+
+        if(percentage >= 90){
+            return this.grade = "Garde A";
+        }
+        else if(percentage >= 80){
+            return this.grade = "Garde B";
+        }
+        else if(percentage >= 70){
+            return this.grade = "Garde C";
+        }
+        else if(percentage >= 60){
+            return this.grade = "Garde D";
+        }
+        else if(percentage >= 50){
+            return this.grade = "Garde E";
+        }
+        else if(percentage >= 40){
+            return this.grade = "Garde F";
+        }
+        else {
+            return this.grade = "Failed";
+        }
+    }
+
+}
+
+let sub = new students();
+let percentage = sub.calculatePercentage();
+let grade = sub.calculateGrade();
+console.log("Percentage: "+percentage+"%");
+console.log(grade);
+
+</script>
+</html>

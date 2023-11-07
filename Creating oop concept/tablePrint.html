@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Print</title>
+</head>
+<body>
+    <table border="1px" align="center" width="400">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+        </tr>
+        <tr align="center">
+            <td id="name1"></td>
+            <td id="email1"></td>
+            <td id="contact1"></td>
+        </tr>
+        <tr align="center">
+            <td id="name2"></td>
+            <td id="email2"></td>
+            <td id="contact2"></td>
+        </tr>
+        <tr align="center">
+            <td id="name3"></td>
+            <td id="email3"></td>
+            <td id="contact3"></td>
+        </tr>
+        <tr align="center">
+            <td id="name4"></td>
+            <td id="email4"></td>
+            <td id="contact4"></td>
+        </tr>
+    </table>
+    
+</body>
+<!-- 2. write a javascript program to below data print html table using constructor method. -->
+<script>
+    class user{
+        constructor(name, email, contact){
+            this.name = name;
+            this.email = email;
+            this.contact = contact;
+        }
+        userName(){
+            document.getElementById("name1").innerHTML = u1.name;
+            document.getElementById("name2").innerHTML = u2.name;
+            document.getElementById("name3").innerHTML = u3.name;
+            document.getElementById("name4").innerHTML = u4.name;
+
+        }
+        userId(){
+            document.getElementById("email1").innerHTML = u1.email;
+            document.getElementById("email2").innerHTML = u2.email;
+            document.getElementById("email3").innerHTML = u3.email;
+            document.getElementById("email4").innerHTML = u4.email;
+
+        }
+        userContact(){
+            document.getElementById("contact1").innerHTML = u1.contact;
+            document.getElementById("contact2").innerHTML = u2.contact;
+            document.getElementById("contact3").innerHTML = u3.contact;
+            document.getElementById("contact4").innerHTML = u4.contact;
+
+        }
+
+    }
+    let u1 = new user("jay", "jay@gmail.com", "12345");
+    let u2 = new user("ajay", "ajay@gmail.com", "12345");
+    let u3 = new user("vijay", "vijay@gmail.com", "12345");
+    let u4 = new user("ashish", "ashish@gmail.com", "12345");
+
+    u1.userName();
+    u1.userId();
+    u1.userContact();
+
+    
+
+</script>
+</html>

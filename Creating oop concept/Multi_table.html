@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication table</title>
+</head>
+<body>
+    
+</body>
+<!-- 3. write a javascript program to use class and object print multiplication table of any number using do while loop. -->
+<script>
+    class multi_table{
+        multiplication(number){
+            this.number = number;
+            let i=1;
+            do{
+                document.write (`${number} x ${i} = ${number*i} <br>`);
+                i++;
+            }while(i <= 10)
+        } 
+    }
+    let num = new multi_table;
+    let number = parseInt(prompt("Enter any number: "));
+   num.multiplication(number);
+    
+</script>
+
+
+
+</html>
