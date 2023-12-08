@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class='box'>
+        <span id='start'>Start</span>
+        <span id='pause'>Stop</span>
+        <span id='restore'>Reset</span>
+      </div>
+      
+      <h1 id='output'>Output: 0</h1>
+
+</body>
+
+
+<script>
+    (i = 0), (a = 0);
+
+start.onclick = () => {
+  if (a == 0) {
+    a = a + 1;
+    c = setInterval(start, 100);
+    function start() {
+      output.innerHTML = "Output: " + i;
+      i++;
+    }
+  }
+};
+
+pause.onclick = () => {
+  if (a == 1) {
+    a = a - 1;
+    clearInterval(c);
+  }
+};
+
+restore.onclick = () => {
+  clearInterval(c);
+  i = 0;
+  a = 0;
+  output.innerHTML = "Output: " + 0;
+};
+
+</script>
+</html>
