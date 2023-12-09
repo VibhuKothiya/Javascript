@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<style>
+    body {
+        font-family: poppins, sans-serif;
+        margin: 0px;
+        background: #d3efdf;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        height: 100%;
+        width: 100%;
+    }
+
+    .add_btn {
+        font-size: large;
+        margin-left: 12px;
+        padding: 7px;
+        outline: none;
+        border: none;
+        border: 1px solid #200648;
+        background: #ffff;
+        border-radius: 10px;
+        transition: 0.4s;
+        box-shadow: -3px -3px 5px #160122, 3px 3px 6px #0c0015;
+        cursor: pointer;
+
+        &:active {
+            scale: 0.9;
+        }
+
+        &:hover {
+            border: 1px solid #430c94;
+        }
+    }
+
+    .add-btn {
+        background: #ffff;
+        font-size: 16px;
+        padding: 7px;
+        outline: none;
+        border: none;
+        border: 1px solid #200648;
+        border-radius: 10px;
+        transition: 0.4s;
+        box-shadow: -1px -1px 2px #160122, 1px 1px 4px #0c0015;
+        cursor: pointer;
+        &:active {
+            scale: 0.5;
+        }
+
+        &:hover {
+            border: 1px solid #430c94;
+        }
+    }
+
+    input {
+        margin: 5px;
+        outline: none;
+        padding: 0.5rem 0.4rem;
+        border: 1px solid #200648;
+        background: #ffff;
+        border-radius: 10px;
+        font-size: 14px;
+        letter-spacing: 0.3ch;
+        box-shadow: -3px -3px 3px #160122, 3px 3px 6px #0c0015;
+        transition: border 0.4s ease;
+
+        &:focus {
+            border: 1px solid #430c94;
+        }
+    }
+
+    #update-modal-content {
+        background-color: #fefefe;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    }
+
+    #update-modal .add-btn {
+        margin-top: 15px;
+        margin-right: 8px;
+    }
+
+    #update-modal {
+        display: none;
+        position: absolute;
+        top: 0;
+        width: 500px;
+        height: 150px;
+        text-align: center;
+
+    }
+
+    .box {
+        display: block;
+        width: 50%;        
+    }
+
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+
+    }
+
+    table {
+        margin-top: 30px;
+        width: 100%;
+        background: #ffff;
+        text-align: center;
+        box-shadow: -3px -3px 3px #160122, 3px 3px 6px #0c0015;
+        border: 1px solid grey;
+        border-radius: 5px;
+        border-collapse: collapse;
+        border-spacing: 0px;
+
+    }
+
+    table tr {
+        border: none;
+        border-radius: 3px;
+
+    }
+
+    table tr td,
+    th {
+        padding: 5px;
+        font-size: 18px;
+        border-color: #200648;
+    }
+
+
+</style>
+
+<body>
+    <div class="container">
+
+        <!-- Add task -->
+
+        <div class="box">
+            <h1>To-Do List</h1>
+            <input type="text" name="fname" id="fname" placeholder="Enter First Name">
+            <input type="text" name="lname" id="lname" placeholder="Enter Last Name">
+            <button onclick="add()" class="add_btn">Add Task</button>
+
+            <!-- Modal for updating task -->
+
+            <div id="update-modal">
+                <div id="update-modal-content">
+                    <input type="hidden" name="index" id="index">
+                    <input type="text" name="fname" id="firstname">
+                    <input type="text" name="lname" id="lastname">
+                    <button onclick="update()" class="add-btn">Update</button>
+                    <button onclick="cancle()" class="add-btn">Cancle</button>
+                </div>
+            </div>
+            <!-- Create table -->
+
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Delete Item</th>
+                        <th>Update Item</th>
+                    </tr>
+                </thead>
+                <tbody id="userData">
+
+                </tbody>
+            </table>
+            <button onclick="ClearAll()" class="add-btn" style="width: 100%; margin-top: 20px; font-weight: bold;">
+                Clear All
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        
+        let result = JSON.parse(localStorage.getItem("data")) || [];
+        add = () => {
+
+            let fname = document.getElementById('fname').value;
+            let lname = document.getElementById('lname').value;
+
+            let data = {
+                fname,
+                lname,
+            }
+
+            result.push(data);
+
+            if(fname === '' || lname === ''){
+                alert("Please Fill Both Data");
+            }
+            else{
+                localStorage.setItem("data", JSON.stringify(result));
+            }              
+            
+            console.log(localStorage);
+            location.reload();
+
+        }
+
+        const getData = () => {
+            let user_Data = document.getElementById('userData');
+
+            result.map((val, ind) => {
+                let row = document.createElement('tr');
+                row.innerHTML = `
+                <td>${ind}</td>
+                <td>${val.fname}</td>
+                <td>${val.lname}</td>
+                <td><button onclick='remove(${ind})' class='add-btn'>delete</button></td> 
+                <td><button onclick='edit(${ind})' class='add-btn'>update</button></td>             
+                `
+                user_Data.appendChild(row);
+
+            });
+
+        }
+
+        getData();
+
+        const remove = (ind) => {
+            result.splice(ind, 1);
+            localStorage.setItem("data", JSON.stringify(result));
+            location.reload();
+        }
+
+
+        const edit = (ind) => {
+            document.querySelector('#update-modal').style.display = 'flex';
+            let data = result[ind];
+            const hidden = (document.getElementById('index').value = ind);
+            const firstname = (document.getElementById('firstname').value = data.fname);
+            const lastname = (document.getElementById('lastname').value = data.lname);
+            console.log(hidden);
+            console.log(data);
+
+        }
+        const update = () => {
+            const firstname = document.getElementById('firstname').value;
+            const lastname = document.getElementById('lastname').value;
+            const index = document.getElementById('index').value;
+
+            const updateData = {
+                fname: firstname,
+                lname: lastname,
+            }
+
+            if(firstname === '' || lastname === ''){
+                alert("Please Fill Both Data");
+            }
+            else{
+                result[index] = updateData;
+                localStorage.setItem("data", JSON.stringify(result));
+            }               
+            location.reload();
+
+        }
+        const cancle = () => {
+            document.querySelector('#update-modal').style.display = 'none';
+        }
+        const ClearAll =() =>{
+            localStorage.removeItem('data');
+            location.reload();
+            console.log(localStorage);
+        }
+
+    </script>
+</body>
+
+</html>
