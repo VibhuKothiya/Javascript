@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=.card, initial-scale=1.0">
+    <title>Weather Info</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #222;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 500px;
+        background: linear-gradient(135deg, #00feba, #5b548a);
+        color: #fff;
+        margin: 100px auto 0;
+        border-radius: 20px;
+        padding: 40px 35px;
+        text-align: center;
+    }
+
+    .search input,
+    button {
+        border: 0;
+        outline: 0;
+        background: #ebfffc;
+        color: #555;
+        padding: 10px 25px;
+        height: 60px;
+        border-radius: 30px;
+        flex: 1;
+        margin-right: 16px;
+        font-size: 18px;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    .weather-icon {
+        width: 170px;
+        margin-top: 30px;
+    }
+
+    .weather h1 {
+        font-size: 80px;
+        font-weight: 500;
+    }
+
+    .weather h2 {
+        font-size: 45px;
+        font-weight: 400;
+        margin-top: -10px;
+    }
+
+    .details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        margin-top: 50px;
+    }
+
+    .col {
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
+
+    .col img {
+        width: 40px;
+        margin-right: 10px;
+    }
+
+    .humidity,
+    .wind {
+        font-size: 28px;
+        margin-top: -6px;
+    }
+    .weather{
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" id="city" placeholder="Enter city name">
+            <button onclick="search()">Search</button>
+        </div>
+        <div class="weather">
+            <img src="images/drizzle.png" class="weather-icon">
+            <h1 class="temp">22ºc</h1>
+            <h2 class="city-name">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png">
+                    <div>
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let temp = document.querySelector('.temp');
+    let city_Name = document.querySelector('.city-name');
+    let humidity = document.querySelector('.humidity');
+    let wind = document.querySelector('.wind');
+    let weatherImg = document.querySelector('.weather-icon');
+
+    const search = () => {
+        getData();
+    }
+
+    async function getData() {
+
+        let city = document.getElementById('city').value;
+        const API_key = "0eef2234c0c7ef1cd7af28002a283460";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`;
+
+
+        try {
+            const response = await fetch(`${url}`);
+            let result = await response.json();
+            console.log(result);
+
+            temp.innerHTML = `${Math.round(result.main.temp - 273.15)}ºc`;
+            city_Name.innerHTML = `${city}`;
+            humidity.innerHTML = `${result.main.humidity}%`;
+            wind.innerHTML = `${result.wind.speed} km/h`;
+
+            if(result.weather[0].main == 'Clouds'){
+                weatherImg.src = "images/clouds.png";
+            }
+            else if(result.weather[0].main == 'Clear'){
+                weatherImg.src = "images/clear.png";
+        
+            }
+            else if(result.weather[0].main == "Mist"){
+                weatherImg.src = "images/mist.png";
+        
+            }
+            else if(result.weather[0].main == "Rain"){
+                weatherImg.src = "images/rain.png";
+        
+            }
+            else if(result.weather[0].main == "Haze"){
+                weatherImg.src = "images/drizzle.png";
+        
+            }
+            document.querySelector('.weather').style.display = "block";
+        }
+        catch (error) {
+            console.log("Error:", error);
+        }
+    };
+
+
+</script>
+</html>
